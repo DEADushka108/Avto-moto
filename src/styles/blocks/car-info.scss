@@ -1,0 +1,63 @@
+.car-info {
+  margin-left: 54px;
+}
+
+.car-info__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 41px;
+}
+
+.car-info__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 19px;
+  width: 370px;
+}
+
+.car-info__item {
+  text-align: center;
+}
+
+.car-info__text {
+  padding: 0;
+  margin: 0;
+}
+
+.car-info__price {
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 48px;
+}
+
+.car-info__old-price {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  color: rgba(72, 73, 77, 0.5);
+}
+
+.car-info__links {
+  margin-bottom: 46px;
+}
+
+.car-info__link {
+  padding: 16px 20px;
+  text-transform: uppercase;
+  background-color: $bg-red;
+  color: $text-white;
+  margin-bottom: 10px;
+  letter-spacing: 0.12em;
+
+  &--credit {
+    background-color: $bg-white;
+    color: $text-red;
+    border: 1px solid $border-red;
+  }
+}

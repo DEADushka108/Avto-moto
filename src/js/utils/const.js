@@ -5,3 +5,5 @@ export const AppRoute = {
   CONTACTS: `/contacts`,
   VACANCY: `/vacancy`,
 };
+
+export const SLIDE_STEP = 1;

@@ -1,5 +1,6 @@
 const NameSpace = {
-  COMMENTS: `COMMENTS`,
+  REVIEWS: `REVIEWS`,
+  CARS: `CARS`,
 };
 
 export default NameSpace;

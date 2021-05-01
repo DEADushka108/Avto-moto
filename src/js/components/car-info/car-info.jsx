@@ -1,16 +1,20 @@
 import React, {Fragment} from 'react';
+import {carDetails} from '../../types/types';
 
-const CarInfo = () => {
+const CarInfo = (props) => {
+  const {carInfo} = props;
+  const {model, price, oldPrice, transmission, horsePower, engineType, engineVolume} = carInfo;
+
   return <Fragment>
     <div className="car-card__car-info car-info">
-      <h2 className="car-info__title">Марпех 11</h2>
+      <h2 className="car-info__title">{model}</h2>
       <ul className="car-info__list">
         <li className="car-info__item">
           <svg width="22" height="22">
             <use xlinkHref="#gas"></use>
           </svg>
           <p className="car-info__text">
-            бензин
+            {engineType}
           </p>
         </li>
         <li className="car-info__item">
@@ -18,7 +22,7 @@ const CarInfo = () => {
             <use xlinkHref="#transmission"></use>
           </svg>
           <p className="car-info__text">
-            механика
+            {transmission}
           </p>
         </li>
         <li className="car-info__item">
@@ -26,7 +30,7 @@ const CarInfo = () => {
             <use xlinkHref="#horse-power"></use>
           </svg>
           <p className="car-info__text">
-            102 л.с.
+            {horsePower} л.с.
           </p>
         </li>
         <li className="car-info__item">
@@ -34,22 +38,30 @@ const CarInfo = () => {
             <use xlinkHref="#capacity"></use>
           </svg>
           <p className="car-info__text">
-            1.4 л.
+            {engineVolume} л.
           </p>
         </li>
       </ul>
       <p className="car-info__price">
-        2 300 000 &#8381;
-        <span className="car-info__old-price"> 2 400 000 &#8381;</span>
+        {price} &#8381;
+        <span className="car-info__old-price"> {oldPrice} &#8381;</span>
       </p>
-      <a className="car-info__button car-info__button--buy">
-        Оставить заявку
-      </a>
-      <a className="car-info__button car-info__button--credit">
-        В кредит от 11 000 &#8381;
-      </a>
+      <p className="car-info__links">
+        <a className="car-info__link car-info__link--buy">
+          Оставить заявку
+        </a>
+      </p>
+      <p className="car-info__links">
+        <a className="car-info__link car-info__link--credit">
+          В кредит от 11 000 &#8381;
+        </a>
+      </p>
     </div>
   </Fragment>;
+};
+
+CarInfo.propTypes = {
+  carInfo: carDetails,
 };
 
 export default CarInfo;

@@ -7,7 +7,7 @@ const Main = () => {
   return <Fragment>
     <Header/>
     <main className="page-main">
-      <h1 className="visually-hidden">Авто мото</h1>
+      <h1 className="visually-hidden">Карточка автомобиля</h1>
 
       <CarCard/>
 
