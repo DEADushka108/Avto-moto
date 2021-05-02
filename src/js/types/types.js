@@ -24,4 +24,5 @@ export const reviewsDetails = PropTypes.shape({
   limitations: PropTypes.string.isRequired,
   comment: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired,
 }).isRequired;
