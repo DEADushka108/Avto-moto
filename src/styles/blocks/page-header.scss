@@ -1,0 +1,30 @@
+.page-header {
+  background-color: $bg-gray;
+}
+
+.page-header__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1185px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.page-header__logo {
+  display: flex;
+  flex-direction: row;
+  margin-left: 17px;
+}
+
+.page-header__text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-bottom: 14px;
+  margin-top: 10px;
+}
+
+.page-header__text-logo {
+  margin-bottom: 9px;
+}

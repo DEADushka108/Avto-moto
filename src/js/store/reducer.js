@@ -1,7 +1,9 @@
 import {combineReducers} from 'redux';
-import {reducer as comments} from './comments/comments';
+import {reducer as reviews} from './reviews/reviews';
+import {reducer as cars} from './cars/cars';
 import NameSpace from './name-space';
 
 export default combineReducers({
-  [NameSpace.COMMENTS]: comments,
+  [NameSpace.REVIEWS]: reviews,
+  [NameSpace.CARS]: cars,
 });

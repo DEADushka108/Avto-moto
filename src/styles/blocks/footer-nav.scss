@@ -1,0 +1,33 @@
+.footer-nav {
+  max-width: 1185px;
+  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.footer-nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.footer-nav__link {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-decoration: none;
+  color: $text-gray;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+    color: $text-black;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
