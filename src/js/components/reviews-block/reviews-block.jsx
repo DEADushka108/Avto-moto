@@ -16,7 +16,7 @@ const ReviewsBlock = (props) => {
           <ul className="review__list">
             <li className="review__item">
               <p className="review__title">
-                <svg className="review__icon" width="8" height="8" viewBox="0 0 8 8" className="review__icon">
+                <svg className="review__icon" width="8" height="8" viewBox="0 0 8 8">
                   <use xlinkHref="#plus"></use>
                 </svg>
                 Достоинства
@@ -47,12 +47,12 @@ const ReviewsBlock = (props) => {
           </ul>
           <div className="review__rating">
             <ul className="review__stars-list">
-              {ReviewStars.map((star, index) => {
-                return <li key={index} className={`review__stars-item ${(star <= rating) ? `review__stars-item--fill` : ``}`}>
+              {ReviewStars.map((star, i) => {
+                return <li key={i} className={`review__stars-item ${(star <= rating) ? `review__stars-item--fill` : ``}`}>
                   <svg className="review__star-icon" width="17" height="16" viewBox="0 0 17 16">
                     <use xlinkHref="#star"></use>
                   </svg>
-                </li>
+                </li>;
               })}
             </ul>
             <p className="review__rating-advice">Советует</p>
