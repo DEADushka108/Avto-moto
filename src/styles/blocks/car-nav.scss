@@ -8,14 +8,14 @@
 
 .car-nav__item {
   min-width: 167px;
-  padding: 10px 13px 13px;
+  padding: 10px 13px 11px;
   font-size: 20px;
   line-height: 27px;
   text-align: center;
   border: 1px solid $border-gray;
 
   &--active {
-    padding: 11px 14px 14px;
+    padding: 11px 14px 11px;
     background-color: $bg-red;
     color: $text-white;
     border: none;

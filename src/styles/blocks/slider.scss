@@ -1,4 +1,11 @@
+.slider {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 80px;
+}
+
 .slider__list {
+  position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -14,11 +21,28 @@
   }
 }
 
+.slider__text {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  background-color: $bg-red;
+  text-transform: uppercase;
+  color: $text-white;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.07em;
+  padding: 7px 10px 9px;
+  min-width: 102px;
+}
+
 .slider__controls {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
+  margin-top: 34px;
 }
 
 .slider__img-list {
@@ -33,6 +57,7 @@
 }
 
 .slider__button {
+  margin-bottom: 5px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -47,5 +72,6 @@
   &:disabled,
   &[disabled] {
     opacity: 0.5;
+    border: 1px solid $border-gray;
   }
 }

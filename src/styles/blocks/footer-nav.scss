@@ -1,20 +1,21 @@
-.main-nav {
-  width: 520px;
+.footer-nav {
+  max-width: 1185px;
+  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.main-nav__list {
+.footer-nav__list {
+  list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-content: center;
-  margin: 0;
   padding: 0;
-  margin-top: 16px;
-  list-style: none;
+  margin-left: 20px;
 }
 
-.main-nav__link {
+.footer-nav__link {
   padding-top: 20px;
   padding-bottom: 20px;
   text-decoration: none;

@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import {carDetails} from '../../types/types';
+import {numberWithSpaces} from '../../utils/utils';
 
 const CarInfo = (props) => {
   const {carInfo} = props;
@@ -43,19 +44,17 @@ const CarInfo = (props) => {
         </li>
       </ul>
       <p className="car-info__price">
-        {price} &#8381;
-        <span className="car-info__old-price"> {oldPrice} &#8381;</span>
+        <span>{numberWithSpaces(price)} &#8381;</span>
+        <span className="car-info__old-price"> {numberWithSpaces(oldPrice)} &#8381;</span>
       </p>
-      <p className="car-info__links">
+      <div className="car-info__links">
         <a className="car-info__link car-info__link--buy">
           Оставить заявку
         </a>
-      </p>
-      <p className="car-info__links">
         <a className="car-info__link car-info__link--credit">
           В кредит от 11 000 &#8381;
         </a>
-      </p>
+      </div>
     </div>
   </Fragment>;
 };

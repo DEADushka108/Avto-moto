@@ -4,7 +4,7 @@ import {carDetails} from '../../types/types';
 
 const CarSlider = (props) => {
   const {carInfo, activeSlide, onLeftArrowClick, onRightArrowClick} = props;
-  const {photos, photosPreview} = carInfo;
+  const {photos, photosPreview, newModel} = carInfo;
 
   return <Fragment>
     <div className="car-card__slider slider">
@@ -12,6 +12,7 @@ const CarSlider = (props) => {
         {photos.map((photo, index) => {
           return <li key={index} className={`slider__item ${(index === activeSlide) ? `slider__item--active` : ``}`}>
             <img className="slider__image" src={photo} width="600" height="375" alt="Фото автомобиля"></img>
+            {(newModel) && <p className="slider__text">New model</p>}
           </li>;
         })}
       </ul>

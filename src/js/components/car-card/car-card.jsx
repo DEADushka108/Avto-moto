@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import PropTypes from 'prop-types';
 import CarInfo from '../car-info/car-info';
 import CarSlider from '../car-slider/car-slider';
 import Tabs from '../tabs/tabs';
@@ -53,7 +54,7 @@ const CarCard = (props) => {
 
 CarCard.propTypes = {
   carInfo: carDetails,
-  reviews: reviewsDetails,
+  reviews: PropTypes.arrayOf(reviewsDetails),
 };
 
 const mapStateToProps = (state) => ({
