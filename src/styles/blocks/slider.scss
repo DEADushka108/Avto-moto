@@ -64,6 +64,7 @@
   background-color: transparent;
   border: 1px solid $border-gray;
   align-self: center;
+  cursor: pointer;
 
   &:hover {
     border: 1px solid $border-black;
@@ -73,5 +74,6 @@
   &[disabled] {
     opacity: 0.5;
     border: 1px solid $border-gray;
+    cursor: default;
   }
 }

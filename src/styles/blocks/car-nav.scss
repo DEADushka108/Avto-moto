@@ -13,11 +13,13 @@
   line-height: 27px;
   text-align: center;
   border: 1px solid $border-gray;
+  cursor: pointer;
 
   &--active {
     padding: 11px 14px 11px;
     background-color: $bg-red;
     color: $text-white;
     border: none;
+    cursor: default;
   }
 }
