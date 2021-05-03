@@ -5,3 +5,7 @@ export const extend = (a, b) => {
 export const numberWithSpaces = (num) => {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ` `);
 };
+
+export const randomNumber = () => {
+  return Math.floor(Math.random() * (1000 - 0 + 1) + 0);
+};

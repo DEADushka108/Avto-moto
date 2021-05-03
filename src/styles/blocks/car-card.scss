@@ -4,6 +4,7 @@
 }
 
 .car-card__desc {
+  position: relative;
   margin-top: 5px;
   margin-left: 16px;
 }
@@ -33,4 +34,26 @@
 
 .car-card__contacts-wrapper {
   position: relative;
+}
+
+.car-card__review-button {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  padding: 16px 19px 15px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $text-red;
+  background-color: transparent;
+  border: 1px solid $border-red;
+
+  &:hover {
+    background-color: $button-dark-red;
+    color: $text-white;
+    border: none;
+  }
 }

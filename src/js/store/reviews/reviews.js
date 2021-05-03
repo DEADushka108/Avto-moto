@@ -6,24 +6,24 @@ const initialState = {
 };
 
 const ActionType = {
-  UPDATE_REVIEWS: `UPDATE_REVIEWS`,
-  DELETE_REVIEWS: `DELETE_REVIEWS`,
+  ADD_REVIEW: `ADD_REVIEW`,
+  DELETE_REVIEW: `DELETE_REVIEW`,
 };
 
 const ActionCreator = {
-  updateReviews: (review) => ({
-    type: ActionType.UPDATE_REVIEWS,
+  addReview: (review) => ({
+    type: ActionType.ADD_REVIEW,
     payload: review,
   }),
   deleteReview: () => ({
-    type: ActionType.DELETE_REVIEWS,
+    type: ActionType.DELETE_REVIEW,
     payload: [],
   })
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionType.UPDATE_REVIEWS:
+    case ActionType.ADD_REVIEW:
       return extend(state, {
         reviews: [action.payload, ...state.reviews],
       });
