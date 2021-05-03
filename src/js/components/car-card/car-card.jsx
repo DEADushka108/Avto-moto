@@ -13,9 +13,11 @@ import {getReviews} from '../../store/reviews/selector';
 import ContactsBlock from '../contacts-block/contacts-block';
 import withActiveSlide from '../../hocs/with-active-slide/with-active-slide';
 import {carDetails, reviewsDetails} from '../../types/types';
+import withActiveModal from '../../hocs/with-active-modal/with-active-modal';
 
 const TabsWrapped = withActiveItem(Tabs);
 const CarSliderWrapped = withActiveSlide(CarSlider);
+const ReviewsBlockWrapped = withActiveModal(ReviewsBlock);
 
 const TabNames = {
   DETAILS: `Характеристики`,
@@ -41,7 +43,7 @@ const CarCard = (props) => {
           <DetailsBlock carInfo={carInfo}/>
         </Tab>
         <Tab title={TabNames.REVIEWS}>
-          <ReviewsBlock reviews={reviews}/>
+          <ReviewsBlockWrapped reviews={reviews}/>
         </Tab>
         <Tab title={TabNames.CONTACTS}>
           <ContactsBlock/>
