@@ -21,6 +21,7 @@ const CarSlider = (props) => {
           <svg width="20" height="13" viewBox="0 0 20 13" className="slider__arrow-icon-left">
             <use xlinkHref="#arrow-left"></use>
           </svg>
+          <span className="visually-hidden">Слайдер влево</span>
         </button>
         <ul className="slider__img-list">
           {photosPreview.map((photo, index) => {
@@ -33,6 +34,7 @@ const CarSlider = (props) => {
           <svg width="20" height="13" viewBox="0 0 20 13" className="slider__arrow-icon-right">
             <use xlinkHref="#arrow-right"></use>
           </svg>
+          <span className="visually-hidden">Слайдер враво</span>
         </button>
       </div>
     </div>
