@@ -8,7 +8,7 @@
     "eslint": "eslint --ext .jsx --ext .js src/",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+    "start": "npm run build && cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "stylelint": "stylelint \"src/styles/**/*.scss\" --syntax scss"
   },
   "repository": {

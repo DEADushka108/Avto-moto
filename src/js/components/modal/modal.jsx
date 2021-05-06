@@ -145,7 +145,7 @@ Modal.propTypes = {
   dignity: PropTypes.string.isRequired,
   limitations: PropTypes.string.isRequired,
   comment: PropTypes.string.isRequired,
-  rating: PropTypes.number.isRequired,
+  rating: PropTypes.string.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
