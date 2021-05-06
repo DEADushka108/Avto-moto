@@ -2,9 +2,9 @@ import React, {Fragment, PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {ActionCreator as ReviewCreator} from '../../store/reviews/reviews';
 import {connect} from 'react-redux';
-import {randomNumber} from '../../utils/utils';
+import {randomNumber, setItem} from '../../utils/utils';
 
-const Stars = [`5`, `4`, `3`, `2`, `1`];
+const stars = [`5`, `4`, `3`, `2`, `1`];
 
 class Modal extends PureComponent {
   constructor(props) {
@@ -36,15 +36,14 @@ class Modal extends PureComponent {
       date: new Date().toUTCString(),
     });
 
+    setItem(`author`, author);
+    setItem(`rating`, Number(rating));
+    setItem(`comment`, comment);
+    setItem(`dignity`, dignity);
+    setItem(`limitations`, limitations);
+    setItem(`date`, new Date().toUTCString());
+
     onActiveModalChange();
-  }
-
-  componentDidMount() {
-    document.addEventListener(`keydown`, this.handleEscButtonClose, false);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener(`keydown`, this.handleEscButtonClose, false);
   }
 
   render() {
@@ -58,7 +57,7 @@ class Modal extends PureComponent {
     } = this.props;
 
     return <Fragment>
-      <section className="modal">
+      <section className="modal" onKeyDown={this.handleEscButtonClose}>
         <h2 className="modal__title">Оставить отзыв</h2>
         <form action="#" className="modal-form review-form" onSubmit={this.handleSubmit}>
           <div className="review-form__wrapper">
@@ -90,7 +89,7 @@ class Modal extends PureComponent {
             </div>
             <div className="review-form__col">
               <div className="review-form__rating rating">
-                {Stars.map((star) => {
+                {stars.map((star) => {
                   return <Fragment key={star}>
                     <input className="rating__input" id={`star-${star}`} type="radio" name="rating" value={star}
                       onChange={(evt) => {

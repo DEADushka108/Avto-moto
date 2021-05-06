@@ -7,7 +7,7 @@ import withName from '../../hocs/with-name/with-name';
 import withRating from '../../hocs/with-rating/with-rating';
 import withText from '../../hocs/with-text/with-text';
 
-const ReviewStars = [1, 2, 3, 4, 5];
+const reviewStars = [1, 2, 3, 4, 5];
 
 const ModalWrapped = withName(withRating(withText(Modal)));
 
@@ -54,7 +54,7 @@ const ReviewsBlock = (props) => {
             </ul>
             <div className="review__rating">
               <ul className="review__stars-list">
-                {ReviewStars.map((star, i) => {
+                {reviewStars.map((star, i) => {
                   return <li key={i} className={`review__stars-item ${(star <= rating) ? `review__stars-item--fill` : ``}`}>
                     <svg className="review__star-icon" width="17" height="16" viewBox="0 0 17 16">
                       <use xlinkHref="#star"></use>
