@@ -7,12 +7,12 @@ const Main = () => {
   return <Fragment>
     <Header/>
     <main className="page-main">
-      <h1 className="visually-hidden">Карточка автомобиля</h1>
+      <div className="page-main__wrapper">
+        <h1 className="visually-hidden">Карточка автомобиля</h1>
 
-      <CarCard/>
-
+        <CarCard/>
+      </div>
     </main>
-
     <Footer/>
 
   </Fragment>;

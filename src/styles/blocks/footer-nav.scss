@@ -15,6 +15,10 @@
   margin-left: 20px;
 }
 
+.footer-nav__item:not(:first-child) {
+  margin-left: 30px;
+}
+
 .footer-nav__link {
   padding-top: 20px;
   padding-bottom: 20px;

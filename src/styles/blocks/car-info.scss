@@ -28,6 +28,10 @@
 .car-info__item {
   text-align: center;
   flex-grow: 1;
+
+  &:not(:first-child) {
+    margin-left: 10px;
+  }
 }
 
 .car-info__text {
