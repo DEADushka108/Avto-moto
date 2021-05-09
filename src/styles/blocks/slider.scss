@@ -15,10 +15,17 @@
 
 .slider__item {
   display: none;
+  width: 600px;
+  height: 375px;
+  background-color: $bg-dark-gray;
 
   &--active {
     display: block;
   }
+}
+
+.slider__image {
+  background-color: $bg-dark-gray;
 }
 
 .slider__text {
@@ -54,6 +61,16 @@
   justify-content: space-between;
   width: 434px;
   list-style: none;
+}
+
+.slider__img-item {
+  width: 128px;
+  height: 80px;
+  background-color: $bg-dark-gray;
+}
+
+.slider__img {
+  background-color: $bg-dark-gray;
 }
 
 .slider__button {
