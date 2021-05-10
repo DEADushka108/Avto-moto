@@ -15,7 +15,7 @@ const Tabs = (props) => {
             onClick={() => {
               onActiveItemChange(index);
             }}>
-            <a className="car-nav__link">{title}</a>
+            <button type="button" className="car-nav__button">{title}</button>
           </li>;
         })}
       </ul>
