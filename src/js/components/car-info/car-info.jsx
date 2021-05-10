@@ -48,10 +48,10 @@ const CarInfo = (props) => {
         <span className="car-info__old-price"> {numberWithSpaces(oldPrice)} &#8381;</span>
       </p>
       <div className="car-info__links">
-        <a className="car-info__link car-info__link--buy">
+        <a href="#" className="car-info__link car-info__link--buy">
           Оставить заявку
         </a>
-        <a className="car-info__link car-info__link--credit">
+        <a href="#" className="car-info__link car-info__link--credit">
           В кредит от 11 000 &#8381;
         </a>
       </div>

@@ -31,11 +31,11 @@ class ContactsBlock extends PureComponent {
           </li>
           <li className="contacts__item">
             <p className="contacts__name">Телефон</p>
-            <a className="contacts__value" href="tel:88003335599">8 (800) 333-55-99</a>
+            <a className="contacts__link" href="tel:88003335599">8 (800) 333-55-99</a>
           </li>
           <li className="contacts__item">
             <p className="contacts__name">E-mail</p>
-            <a className="contacts__value" href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
+            <a className="contacts__link" href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
           </li>
         </ul>
         <Map
