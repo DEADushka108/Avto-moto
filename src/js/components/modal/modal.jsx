@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {ActionCreator as ReviewCreator} from '../../store/reviews/reviews';
 import {connect} from 'react-redux';
 import {randomNumber, setItem} from '../../utils/utils';
+import {disablePageScroll, enablePageScroll} from 'scroll-lock';
 
 const stars = [`5`, `4`, `3`, `2`, `1`];
 
@@ -46,8 +47,18 @@ class Modal extends PureComponent {
     onActiveModalChange();
   }
 
+  componentDidMount() {
+    disablePageScroll();
+  }
+
+  componentWillUnmount() {
+    enablePageScroll();
+  }
+
   render() {
     const {
+      author,
+      comment,
       onActiveModalChange,
       onRatingChange,
       onNameInput,
@@ -64,8 +75,9 @@ class Modal extends PureComponent {
             <div className="review-form__col">
               <ul className="review-form__left-list">
                 <li className="review-form__left-item">
-                  <p className="review-form__text">Пожалуйста, заполните поле</p>
-                  <input className="review-form__input" id="name" type="text" name="name" placeholder="* Имя" required autoFocus
+                  {!author && <p className="review-form__text">Пожалуйста, заполните поле</p>}
+                  {!author && <label className="review-form__label" htmlFor="name">*</label>}
+                  <input className="review-form__input" id="name" type="text" name="name" placeholder="Имя" required autoFocus
                     onChange={(evt) => {
                       onNameInput(evt);
                     }}
@@ -102,7 +114,9 @@ class Modal extends PureComponent {
                 <p className="rating__text">Оцените товар:</p>
               </div>
               <div className="review-form__comment">
-                <textarea className="review-form__textarea" name="review-text" id="review-text" placeholder="* Комментарий" required
+                {!comment && <p className="review-form__text review-form__text--textarea">Пожалуйста, заполните поле</p>}
+                {!comment && <label className="review-form__label review-form__label--textarea" htmlFor="review-text">*</label>}
+                <textarea className="review-form__textarea" name="review-text" id="review-text" placeholder="Комментарий" required
                   onChange={(evt) => {
                     onCommentInput(evt);
                   }}

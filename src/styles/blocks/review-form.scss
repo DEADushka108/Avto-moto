@@ -31,6 +31,7 @@
 }
 
 .review-form__input {
+  position: relative;
   padding: 15px 25px 16px;
   width: 248px;
   margin-bottom: 15px;
@@ -43,6 +44,10 @@
   }
 }
 
+.review-form__comment {
+  position: relative;
+}
+
 .review-form__textarea {
   padding: 17px 25px 18px;
   width: 250px;
@@ -50,6 +55,7 @@
   min-height: 88px;
   font-size: 14px;
   line-height: 19px;
+  resize: none;
 }
 
 .review-form__submit {
@@ -82,6 +88,7 @@
   border: none;
   background-color: transparent;
   fill: $button-gray;
+  cursor: pointer;
 
   &:hover {
     fill: $button-red;
@@ -97,4 +104,21 @@
   font-size: 14px;
   line-height: 19px;
   color: #ff0000;
+
+  &--textarea {
+    top: -24px;
+  }
+}
+
+.review-form__label {
+  position: absolute;
+  top: 38px;
+  left: 12px;
+  font-size: 14px;
+  color: #ff0000;
+  z-index: 2;
+
+  &--textarea {
+    top: 15px;
+  }
 }

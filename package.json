@@ -8,7 +8,7 @@
     "eslint": "eslint --ext .jsx --ext .js src/",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
-    "start": "npm run build && cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "stylelint": "stylelint \"src/styles/**/*.scss\" --syntax scss"
   },
   "repository": {
@@ -36,7 +36,8 @@
     "react-router-dom": "5.2.0",
     "redux": "4.1.0",
     "redux-devtools-extension": "2.13.9",
-    "redux-thunk": "2.3.0"
+    "redux-thunk": "2.3.0",
+    "scroll-lock": "2.1.5"
   },
   "devDependencies": {
     "@babel/core": "7.13.8",
