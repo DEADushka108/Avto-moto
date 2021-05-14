@@ -4,6 +4,7 @@ import {ActionCreator as ReviewCreator} from '../../store/reviews/reviews';
 import {connect} from 'react-redux';
 import {randomNumber, setItem} from '../../utils/utils';
 import {disablePageScroll, enablePageScroll} from 'scroll-lock';
+import {ValidStatus} from '../../utils/const';
 
 const stars = [`5`, `4`, `3`, `2`, `1`];
 
@@ -23,9 +24,31 @@ class Modal extends PureComponent {
   }
 
   handleSubmit(evt) {
-    const {author, rating, comment, dignity, limitations, onSubmit, onActiveModalChange} = this.props;
+    const {
+      author,
+      validAuthor,
+      rating,
+      comment,
+      validComment,
+      dignity,
+      limitations,
+      onSubmit,
+      onActiveModalChange,
+      onNameValidCkeck,
+      onValidCommentCheck,
+    } = this.props;
 
     evt.preventDefault();
+
+    if (!validAuthor || !author) {
+      onNameValidCkeck(ValidStatus.INVALID);
+      return;
+    }
+
+    if (!validComment || !comment) {
+      onValidCommentCheck(ValidStatus.INVALID);
+      return;
+    }
 
     onSubmit({
       id: randomNumber(),
@@ -58,7 +81,9 @@ class Modal extends PureComponent {
   render() {
     const {
       author,
+      validAuthor,
       comment,
+      validComment,
       onActiveModalChange,
       onRatingChange,
       onNameInput,
@@ -75,9 +100,9 @@ class Modal extends PureComponent {
             <div className="review-form__col">
               <ul className="review-form__left-list">
                 <li className="review-form__left-item">
-                  {!author && <p className="review-form__text">Пожалуйста, заполните поле</p>}
+                  {!validAuthor && <p className="review-form__text">Пожалуйста, заполните поле</p>}
                   {!author && <label className="review-form__label" htmlFor="name">*</label>}
-                  <input className="review-form__input" id="name" type="text" name="name" placeholder="Имя" required autoFocus
+                  <input className="review-form__input" id="name" type="text" name="name" placeholder="Имя" autoFocus
                     onChange={(evt) => {
                       onNameInput(evt);
                     }}
@@ -114,9 +139,9 @@ class Modal extends PureComponent {
                 <p className="rating__text">Оцените товар:</p>
               </div>
               <div className="review-form__comment">
-                {!comment && <p className="review-form__text review-form__text--textarea">Пожалуйста, заполните поле</p>}
+                {!validComment && <p className="review-form__text review-form__text--textarea">Пожалуйста, заполните поле</p>}
                 {!comment && <label className="review-form__label review-form__label--textarea" htmlFor="review-text">*</label>}
-                <textarea className="review-form__textarea" name="review-text" id="review-text" placeholder="Комментарий" required
+                <textarea className="review-form__textarea" name="review-text" id="review-text" placeholder="Комментарий"
                   onChange={(evt) => {
                     onCommentInput(evt);
                   }}
@@ -155,10 +180,14 @@ Modal.propTypes = {
   onLimitationsInput: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   author: PropTypes.string.isRequired,
+  validAuthor: PropTypes.bool.isRequired,
   dignity: PropTypes.string.isRequired,
   limitations: PropTypes.string.isRequired,
   comment: PropTypes.string.isRequired,
+  validComment: PropTypes.bool.isRequired,
   rating: PropTypes.string.isRequired,
+  onNameValidCkeck: PropTypes.func.isRequired,
+  onValidCommentCheck: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({

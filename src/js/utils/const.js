@@ -7,3 +7,8 @@ export const AppRoute = {
 };
 
 export const SLIDE_STEP = 1;
+
+export const ValidStatus = {
+  VALID: true,
+  INVALID: false,
+};

@@ -1,8 +1,6 @@
 .footer-nav {
   max-width: 1225px;
   margin: 0 auto;
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
 
 .footer-nav__list {
@@ -12,11 +10,13 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0;
-  margin-left: 40px;
+  margin-left: 10px;
   margin-right: 20px;
 }
 
-.footer-nav__item:not(:first-child) {
+.footer-nav__item {
+  padding-top: 15px;
+  padding-bottom: 15px;
   margin-left: 30px;
 }
 
